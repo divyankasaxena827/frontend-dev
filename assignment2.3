@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Course Registration</title>
+</head>
+<body>
+  <h1>Course Registration</h1>
+
+  <form action="#" method="post">
+    <fieldset>
+      <legend>Student Details</legend>
+      <label for="name">Full Name:</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required>
+    </fieldset>
+
+    <fieldset>
+      <legend>Course Selection</legend>
+      <label for="course">Choose a course:</label><br>
+      <select id="course" name="course">
+        <option value="web" selected>Web Development (Beginner)</option>
+        <option value="ml">Machine Learning (Intermediate)</option>
+        <option value="uiux">UI/UX Design (Beginner)</option>
+      </select>
+    </fieldset>
+
+    <p>
+      <button type="submit">Register</button>
+      <button type="reset">Reset</button>
+    </p>
+  </form>
+
+  <h2>Available Course Schedules</h2>
+  <table border="1" cellpadding="6" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Day</th>
+        <th>Time</th>
+        <th>Instructor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Monday</td>
+        <td>6:00 PM - 8:00 PM</td>
+        <td>Prof. A. Sharma</td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+        <td>6:00 PM - 8:00 PM</td>
+        <td>Ms. R. Patel</td>
+      </tr>
+      <tr>
+        <td>Saturday</td>
+        <td>10:00 AM - 1:00 PM</td>
+        <td>Mr. S. Rao</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
