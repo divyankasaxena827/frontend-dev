@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard Grid</title>
+  <link rel="stylesheet" href="dashboard4.css" />
+</head>
+<body>
+  <div class="layout">
+    <header class="header">My Dashboard</header>
+    <aside class="sidebar">
+      <nav>
+        <a href="#">Overview</a>
+        <a href="#">Reports</a>
+        <a href="#">Analytics</a>
+        <a href="#">Settings</a>
+      </nav>
+    </aside>
+    <main class="content">
+      <div class="box b1">Box 1 (spans 2 cols)</div>
+      <div class="box b2">Box 2</div>
+      <div class="box b3">Box 3</div>
+      <div class="box b4">Box 4</div>
+    </main>
+  </div>
+</body>
+</html>
+
+
+
+
+/* Dashboard layout using CSS Grid */
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,Arial;background:#f4f6f9;color:#222}
+.layout{
+  display:grid;
+  grid-template-columns: 240px 1fr; /* sidebar + main area */
+  grid-template-rows: auto 1fr;
+  gap:16px;
+  grid-template-areas:
+    "header header"
+    "sidebar content";
+  padding:16px;
+  min-height:100vh;
+}
+
+/* Header spans top across all columns */
+.header{
+  grid-area:header;
+  background:white;padding:16px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.04);
+  font-weight:700;
+}
+
+/* Sidebar on left with vertical nav */
+.sidebar{
+  grid-area:sidebar;
+  background:white;padding:12px;border-radius:8px;
+}
+.sidebar nav{display:flex;flex-direction:column;gap:8px}
+.sidebar a{text-decoration:none;color:#333;padding:8px;border-radius:6px}
+
+/* Main content area */
+.content{
+  grid-area:content;
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 160px;
+  gap:12px;
+  align-items:stretch;
+}
+
+/* Make one box span two columns */
+.b1{ grid-column: span 2; background:white; display:flex;align-items:center;justify-content:center; border-radius:8px; }
+.box{ background:white;border-radius:8px; display:flex; align-items:center; justify-content:center; transition: transform .2s ease, box-shadow .2s ease; }
+
+/* Hover: scale up and shadow */
+.box:hover{
+  transform: scale(1.03);
+  box-shadow:0 10px 20px rgba(0,0,0,0.08);
+}
+
+/* Responsive: collapse to single column under 900px */
+@media (max-width:900px){
+  .layout{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "content";
+  }
+  .content{grid-template-columns:1fr;grid-auto-rows:140px}
+  .b1{grid-column:auto}
+}
