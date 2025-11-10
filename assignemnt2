@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Resume — Your Name</title>
+</head>
+<body>
+  <header>
+    <h1>Divyanka Saxena</h1>
+    <p>Email: divyanka@example.com | Phone: +91-98765-43210 | Location: Mumbai, India</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I am a motivated engineering student with interests in UI/UX, web development, and data structures. I like building clean, usable interfaces and solving algorithmic problems.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>HTML, CSS</li>
+        <li>JavaScript (basics)</li>
+        <li>Python</li>
+        <li>Figma / UI Design</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ol>
+        <li>Furniture Website UI — Designed in Figma and implemented HTML prototype.</li>
+        <li>Movie Recommender — PCA + KNN proof of concept (dataset: TMDB).</li>
+        <li>Personal Portfolio — Static site with resume & projects.</li>
+      </ol>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <table border="1" cellpadding="6" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Institute</th>
+            <th>Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>B.Tech. Engineering Chemistry</td>
+            <td>XYZ Institute of Technology</td>
+            <td>2023 - Present</td>
+          </tr>
+          <tr>
+            <td>High School (Science)</td>
+            <td>ABC Senior Secondary School</td>
+            <td>2020 - 2022</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Divyanka Saxena. All rights reserved.</p>
+  </footer>
+</body>
+</html>
