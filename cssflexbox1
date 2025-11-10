@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio - Flexbox</title>
+  <link rel="stylesheet" href="portfolio1.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">Divyanka Saxena</div>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section id="about" class="about">
+      <h1>About Me</h1>
+      <p>I'm a front-end enthusiast who loves building clean, accessible layouts with pure CSS. I focus on responsive design and semantic HTML.</p>
+      <p>Skills: HTML, CSS (Flexbox & Grid), responsive design.</p>
+    </section>
+
+    <aside class="profile">
+      <img src="https://via.placeholder.com/350" alt="Profile image" />
+      <p class="caption">Photo — me at a design meetup</p>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    &copy; <span id="year">2025</span> Divyanka Saxena. All rights reserved.
+  </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+/* Portfolio (Flexbox) */
+:root {
+  --gap: 1.25rem;
+  --max-width: 1100px;
+  --bg: #f7f7fb;
+  --accent: #2c6fb6;
+}
+
+* {box-sizing: border-box}
+body {
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color:#111;
+  display:flex;
+  min-height:100vh;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* Header: name left, nav right - horizontal layout with flex */
+.site-header {
+  width:100%;
+  max-width:var(--max-width);
+  display:flex;
+  justify-content:space-between; /* pushes brand left and nav right */
+  align-items:center;             /* vertical centering */
+  padding:1rem var(--gap);
+  background:white;
+  margin-top:1rem;
+  border-radius:8px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.05);
+}
+
+.site-header .brand { font-weight:700; color:var(--accent) }
+.site-header .nav a {
+  margin-left:1rem;
+  text-decoration:none;
+  color:#333;
+}
+
+/* Main area uses flex to place about text and image side-by-side */
+.main {
+  width:100%;
+  max-width:var(--max-width);
+  display:flex;             /* side-by-side layout */
+  gap:var(--gap);
+  align-items:center;       /* center vertically */
+  justify-content:center;
+  padding:2rem var(--gap);
+}
+
+/* about section flexes to fill remaining space */
+.about {
+  flex:1 1 0;
+  background:white;
+  padding:1.5rem;
+  border-radius:8px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.04);
+}
+
+/* profile image column */
+.profile {
+  width:320px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:0.5rem;
+}
+.profile img {
+  width:100%;
+  max-width:320px;
+  border-radius:12px;
+  display:block;
+}
+
+/* footer */
+.site-footer {
+  width:100%;
+  max-width:var(--max-width);
+  text-align:center;
+  padding:1rem;
+  margin:1.5rem 0;
+  color:#666;
+}
+
+/* Responsive: stack vertically under 700px */
+@media (max-width:700px){
+  .main {
+    flex-direction:column; /* stack sections vertically */
+    align-items:center;
+  }
+  .profile {width:90%}
+  .site-header {
+    flex-direction:column;
+    gap:0.5rem;
+    align-items:center;
+  }
+  .site-header .nav a{ margin-left:0.5rem }
+}
