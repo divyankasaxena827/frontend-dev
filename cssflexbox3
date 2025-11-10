@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Homepage - Services</title>
+  <link rel="stylesheet" href="homepage3.css" />
+</head>
+<body>
+  <header class="topnav">
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">Projects</a>
+    <a href="#">Contact</a>
+  </header>
+
+  <main class="boxes">
+    <section class="box">Services</section>
+    <section class="box">Projects</section>
+    <section class="box">Contact</section>
+  </main>
+
+  <footer class="foot">© 2025 Company — All rights reserved</footer>
+</body>
+</html>
+
+
+
+
+/* 3-section homepage with Flexbox */
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,Arial;display:flex;flex-direction:column;min-height:100vh}
+.topnav{
+  display:flex;
+  justify-content:space-around; /* evenly spaced nav links */
+  gap:0.5rem;
+  padding:1rem;
+  background:#fff;
+  box-shadow:0 1px 6px rgba(0,0,0,0.03);
+}
+.topnav a{text-decoration:none;color:#333;padding:0.25rem 0.5rem}
+
+/* main: three horizontally aligned boxes */
+.boxes{
+  display:flex;
+  gap:1rem;
+  padding:2rem;
+  flex:1; /* push footer to bottom */
+  align-items:stretch;
+  justify-content:center;
+}
+.box{
+  flex:1;
+  min-height:200px;
+  background:#fefefe;
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.25rem;
+  box-shadow:0 2px 6px rgba(0,0,0,0.05);
+  transition: transform .25s ease; /* smooth hover */
+  will-change:transform;
+}
+
+/* rotate slightly on hover */
+.box:hover{ transform: rotate(2deg); }
+
+/* footer spans full width and sticks to bottom visually */
+.foot{
+  text-align:center;
+  padding:1rem;
+  background:#fff;
+  color:#666;
+}
+
+/* Responsive: stack boxes vertically on small screens */
+@media (max-width:800px){
+  .boxes{flex-direction:column;padding:1rem}
+  .box{min-height:140px}
+  .topnav{flex-wrap:wrap}
+}
