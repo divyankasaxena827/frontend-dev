@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage Layout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="box services">
+      <h2>Services</h2>
+      <p>We offer high-quality web development, UI/UX design, and creative solutions for your brand.</p>
+    </section>
+
+    <section class="box projects">
+      <h2>Projects</h2>
+      <p>Explore our portfolio of websites and applications crafted with modern technologies.</p>
+    </section>
+
+    <section class="box contact">
+      <h2>Contact</h2>
+      <p>Get in touch with us for collaborations, queries, or business partnerships.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MyCompany. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* HEADER */
+header {
+  background-color: #222;
+  padding: 15px 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #f0c040;
+}
+
+/* MAIN CONTENT */
+main {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  flex: 1;
+  padding: 40px;
+  gap: 20px;
+  background-color: #f8f8f8;
+}
+
+.box {
+  background-color: white;
+  flex: 1;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.3s;
+}
+
+.box:hover {
+  transform: rotate(2deg);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* FOOTER */
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 800px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box {
+    width: 80%;
+  }
+}
