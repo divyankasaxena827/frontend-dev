@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Product Gallery</title>
+  <link rel="stylesheet" href="gallery2.css" />
+</head>
+<body>
+  <header class="header"><h1>Store — Products</h1></header>
+  <main class="grid">
+    <!-- 8 product cards -->
+    <article class="card"><h3>Product A</h3><p class="price">$29</p></article>
+    <article class="card"><h3>Product B</h3><p class="price">$45</p></article>
+    <article class="card"><h3>Product C with longer name</h3><p class="price">$59</p></article>
+    <article class="card"><h3>Product D</h3><p class="price">$19</p></article>
+    <article class="card"><h3>Product E</h3><p class="price">$39</p></article>
+    <article class="card"><h3>Product F</h3><p class="price">$24</p></article>
+    <article class="card"><h3>Product G</h3><p class="price">$99</p></article>
+    <article class="card"><h3>Product H</h3><p class="price">$12</p></article>
+  </main>
+  <footer class="footer">© 2025 Example Store</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+/* Product gallery (CSS Grid) */
+*{box-sizing:border-box}
+body{font-family:system-ui,Arial;margin:0;padding:2rem;background:#fafafa;color:#111;display:flex;flex-direction:column;min-height:100vh}
+.header{max-width:1100px;margin:0 auto 1rem;padding:0 1rem}
+.grid{
+  max-width:1100px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+  gap:1rem;
+  align-items:start;
+  padding:1rem;
+}
+
+/* Card equal height: make each a flex column stretching */
+.card{
+  background:white;
+  padding:1rem;
+  border-radius:8px;
+  box-shadow:0 1px 4px rgba(0,0,0,0.06);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between; /* pushes content to fill height */
+  min-height:160px; /* visual baseline */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* hover effect — scale up slightly */
+.card:hover{
+  transform: scale(1.05);
+  box-shadow:0 8px 18px rgba(0,0,0,0.12);
+}
+
+.card h3{margin:0 0 .5rem 0;font-size:1.05rem}
+.price{font-weight:700;color:#2b7ae4;margin-top:auto}
+
+/* Tablets: 2 columns */
+@media (max-width:900px){
+  .grid{grid-template-columns: repeat(2, 1fr)}
+}
+
+/* Mobile: 1 column */
+@media (max-width:500px){
+  .grid{grid-template-columns: 1fr;padding:0.5rem}
+  body{padding:1rem}
+}
+.footer{max-width:1100px;margin:1.5rem auto;text-align:center;color:#666}
